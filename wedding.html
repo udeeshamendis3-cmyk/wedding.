@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Wedding Invitation - Thashmi & Nipuna">
+    <meta name="theme-color" content="#D4AF37">
+    <title>Thashmi & Nipuna - Wedding Invitation</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8941F;
+            --black: #1a1a1a;
+            --cream: #F5F3E8;
+            --light-cream: #FAF9F6;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--light-cream);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Prevent horizontal scroll */
+        body, html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Envelope Section */
+        .envelope-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-cream) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .save-the-date {
+            position: absolute;
+            top: 5vh;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+        }
+
+        .couple-names-header {
+            position: absolute;
+            top: 12vh;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: var(--black);
+            letter-spacing: 3px;
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .wedding-date-header {
+            position: absolute;
+            top: 20vh;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .envelope {
+            width: min(340px, 90vw);
+            height: min(480px, 65vh);
+            background: var(--black);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 3px solid var(--gold);
+            margin: 100px 0;
+        }
+
+        .envelope:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+        }
+
+        .envelope:active {
+            transform: scale(0.98);
+        }
+
+        .floral-corner {
+            position: absolute;
+            width: min(100px, 25vw);
+            height: min(100px, 25vw);
+            border: 2px solid var(--gold);
+            opacity: 0.6;
+        }
+
+        .floral-corner.top-left {
+            top: 15px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .floral-corner.top-right {
+            top: 15px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .floral-corner.bottom-left {
+            bottom: 15px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .floral-corner.bottom-right {
+            bottom: 15px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .seal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(120px, 30vw);
+            height: min(120px, 30vw);
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+
+        .envelope:hover .seal {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .seal-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .seal-open {
+            font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-top: 5px;
+        }
+
+        .tap-to-reveal {
+            position: absolute;
+            bottom: 40px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+            text-align: center;
+            width: 100%;
+            left: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-5px); }
+        }
+
+        .side-text {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: rotate(-90deg);
+            transform-origin: left center;
+            font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+            letter-spacing: 4px;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        /* Main Invitation Content */
+        .invitation-content {
+            display: none;
+            background: var(--light-cream);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg) scale(1.1);
+            background: var(--dark-gold);
+        }
+
+        .close-btn:active {
+            transform: rotate(90deg) scale(0.95);
+        }
+
+        /* Content Sections */
+        section {
+            padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Floral Arch Section */
+        .floral-arch {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 20px;
+        }
+
+        .floral-arch-svg {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .floral-arch-text {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            margin-top: -150px;
+            z-index: 2;
+        }
+
+        .beloved-text {
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .parent-names {
+            font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+            color: var(--black);
+            margin: 5px 0;
+        }
+
+        .bride-groom-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            color: var(--gold);
+            margin: 15px 0;
+            line-height: 1.2;
+        }
+
+        .ampersand {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2rem, 6vw, 2.5rem);
+            color: var(--gold);
+            margin: 10px 0;
+        }
+
+        .please-join {
+            background: var(--cream);
+            padding: clamp(12px, 3vw, 15px) clamp(30px, 6vw, 40px);
+            border-radius: 30px;
+            display: inline-block;
+            margin: 20px 0;
+            letter-spacing: 3px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            transition: var(--transition);
+        }
+
+        .please-join:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .event-date-location {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .event-date {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--black);
+            margin-bottom: 5px;
+        }
+
+        .event-location {
+            color: var(--gold);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            letter-spacing: 2px;
+        }
+
+        /* Couple Illustration */
+        .couple-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .wedding-celebration-text {
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .invite-text {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            letter-spacing: 2px;
+            color: var(--black);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .couple-illustration {
+            width: min(300px, 85vw);
+            height: min(350px, 70vh);
+            background: var(--black);
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+
+        .couple-illustration:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .couple-illustration img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Black Cards Section - Responsive Grid */
+        .black-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 50px auto;
+            max-width: 500px;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 768px) {
+            .black-cards {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+            }
+            
+            .circle-ampersand {
+                grid-column: 1 / -1;
+                justify-self: center;
+                align-self: center;
+            }
+        }
+
+        .black-card {
+            background: var(--black);
+            padding: clamp(30px, 6vw, 40px) clamp(25px, 5vw, 30px);
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid var(--gold);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .black-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .black-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+        }
+
+        .black-card .beloved-text {
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .black-card .parent-names {
+            color: var(--gold);
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
+        }
+
+        .black-card .bride-groom-name {
+            margin-top: 15px;
+        }
+
+        .circle-ampersand {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: var(--black);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Date & Time Section */
+        .datetime-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .datetime-item {
+            margin: 25px 0;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .datetime-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .datetime-icon {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .datetime-label {
+            font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .datetime-value {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+            color: var(--black);
+        }
+
+        .datetime-sub {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--gold);
+        }
+
+        /* Countdown */
+        .countdown-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: clamp(30px, 6vw, 40px) clamp(20px, 4vw, 20px);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-cream) 100%);
+            border-radius: 20px;
+        }
+
+        .wait-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .magic-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2rem, 6vw, 2.5rem);
+            color: var(--gold);
+        }
+
+        .countdown-label {
+            font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+
+        .countdown-timer {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px auto;
+            max-width: 400px;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 640px) {
+            .countdown-timer {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .countdown-box {
+            background: white;
+            padding: clamp(15px, 3vw, 20px) clamp(10px, 2vw, 15px);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2rem);
+            font-weight: 700;
+            color: var(--black);
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-unit {
+            font-size: clamp(0.65rem, 1.5vw, 0.7rem);
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Venue Section */
+        .venue-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .venue-label {
+            font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .venue-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .venue-address {
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .venue-description {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            color: var(--black);
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            padding: 0 15px;
+        }
+
+        .get-directions-btn {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: clamp(12px, 3vw, 15px) clamp(30px, 6vw, 40px);
+            border-radius: 30px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .get-directions-btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .get-directions-btn:active {
+            transform: translateY(0);
+        }
+
+        .map-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: clamp(250px, 50vh, 350px);
+            border: none;
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: clamp(40px, 8vw, 50px) clamp(20px, 4vw, 20px);
+            background: var(--cream);
+            border-radius: 20px;
+        }
+
+        .rsvp-question {
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .rsvp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .rsvp-text {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            padding: 0 15px;
+        }
+
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: clamp(12px, 3vw, 15px);
+            border: 2px solid var(--gold);
+            background: white;
+            border-radius: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2.5vw, 1.05rem);
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            border-color: var(--dark-gold);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .send-rsvp-btn {
+            width: 100%;
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: clamp(15px, 4vw, 18px);
+            border-radius: 30px;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            cursor: pointer;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .send-rsvp-btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .send-rsvp-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Best Wishes Section */
+        .wishes-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: clamp(40px, 8vw, 50px) clamp(20px, 4vw, 20px);
+        }
+
+        .wishes-icon {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .wishes-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .wishes-text {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            padding: 0 15px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: clamp(30px, 6vw, 40px) clamp(20px, 4vw, 20px);
+            margin-top: 50px;
+        }
+
+        .footer-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .with-love {
+            font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .footer-floral {
+            width: min(100px, 25vw);
+            margin: 20px auto;
+            opacity: 0.6;
+        }
+
+        .copyright {
+            font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin: 20px 0;
+        }
+
+        .design-by {
+            margin-top: 30px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            color: var(--gold);
+        }
+
+        .design-by strong {
+            display: block;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-top: 5px;
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .envelope:hover {
+                transform: none;
+            }
+            
+            .black-card:hover,
+            .countdown-box:hover,
+            .datetime-item:hover {
+                transform: none;
+            }
+            
+            .please-join:hover {
+                transform: none;
+            }
+        }
+
+        /* Landscape orientation on mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .envelope-container {
+                padding: 10px;
+            }
+            
+            .envelope {
+                margin: 60px 0;
+            }
+            
+            .save-the-date,
+            .couple-names-header,
+            .wedding-date-header {
+                display: none;
+            }
+        }
+
+        /* Large screens */
+        @media (min-width: 1200px) {
+            html {
+                font-size: 18px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .envelope-container,
+            .close-btn,
+            .particles,
+            .get-directions-btn,
+            .send-rsvp-btn {
+                display: none !important;
+            }
+            
+            .invitation-content {
+                display: block !important;
+            }
+            
+            section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --light-cream: #1a1a1a;
+                --cream: #2a2a2a;
+                --black: #f5f3e8;
+            }
+            
+            body {
+                background: #0f0f0f;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Envelope Section -->
+    <div class="envelope-container" id="envelopeSection">
+        <div class="save-the-date">Save The Date</div>
+        <div class="couple-names-header">THASHMI & NIPUNA</div>
+        <div class="wedding-date-header">22nd AUG 2026</div>
+        
+        <div class="envelope" onclick="openInvitation()" role="button" tabindex="0" aria-label="Open wedding invitation">
+            <div class="side-text">THASHMI & NIPUNA</div>
+            
+            <div class="floral-corner top-left"></div>
+            <div class="floral-corner top-right"></div>
+            <div class="floral-corner bottom-left"></div>
+            <div class="floral-corner bottom-right"></div>
+            
+            <div class="seal">
+                <div class="seal-text">T&N</div>
+                <div class="seal-open">OPEN</div>
+            </div>
+            
+            <div class="tap-to-reveal">Tap to Reveal</div>
+        </div>
+        
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Main Invitation Content -->
+    <div class="invitation-content" id="invitationContent" role="main">
+        <button class="close-btn" onclick="closeInvitation()" aria-label="Close invitation">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Floral Arch Section -->
+        <section class="floral-arch fade-in">
+            <svg class="floral-arch-svg" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+                <!-- Elegant floral arch -->
+                <defs>
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#F5F3E8;stop-opacity:0.8" />
+                    </linearGradient>
+                </defs>
+                <!-- Arch -->
+                <path d="M 30 200 Q 200 20 370 200" stroke="url(#goldGradient)" stroke-width="3" fill="none" opacity="0.6"/>
+                <!-- Flowers -->
+                <text x="50" y="150" font-size="45">🌸</text>
+                <text x="305" y="150" font-size="45">🌸</text>
+                <text x="175" y="70" font-size="40">🌺</text>
+                <text x="30" y="200" font-size="35">🌿</text>
+                <text x="335" y="200" font-size="35">🌿</text>
+                <text x="100" y="100" font-size="30">🌼</text>
+                <text x="270" y="100" font-size="30">🌼</text>
+            </svg>
+            
+            <div class="floral-arch-text">
+                <div class="beloved-text">Beloved Daughter Of</div>
+                <div class="parent-names">Mr. Mahesh Perera</div>
+                <div class="parent-names">& Mrs. Sunethra Perera</div>
+                
+                <div class="bride-groom-name">Thashmi</div>
+                
+                <div class="ampersand">&</div>
+                
+                <div class="beloved-text">Beloved Son Of</div>
+                <div class="parent-names">Mr. Kamal Gunawardena</div>
+                <div class="parent-names">& Mrs. Nilanthi Gunawardena</div>
+                
+                <div class="bride-groom-name">Nipuna</div>
+                
+                <div class="please-join">Please Join Us</div>
+                
+                <div class="event-date-location">
+                    <div class="event-date">22nd Aug 2026</div>
+                    <div class="event-location">Hilton Colombo</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Couple Illustration Section -->
+        <section class="couple-section fade-in">
+            <div class="wedding-celebration-text">Wedding Celebration</div>
+            <div class="invite-text">
+                You are cordially invited<br>
+                to celebrate the union of
+            </div>
+            
+            <div class="couple-illustration">
+                <!-- Replace with actual couple image -->
+                <div style="text-align: center; color: var(--gold); padding: 20px;">
+                    <i class="fas fa-heart" style="font-size: clamp(3rem, 8vw, 4rem); margin-bottom: 20px;"></i>
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.2rem);">Couple Photo</p>
+                    <p style="font-size: clamp(0.8rem, 2vw, 0.9rem); margin-top: 10px;">Add your illustration here</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Black Cards Section -->
+        <section class="fade-in">
+            <div class="black-cards">
+                <div class="black-card">
+                    <div class="beloved-text">Beloved Daughter Of</div>
+                    <div class="parent-names">Mr. Mahesh Perera</div>
+                    <div class="parent-names">& Mrs. Sunethra Perera</div>
+                    <div class="bride-groom-name">Thashmi</div>
+                </div>
+                
+                <div class="circle-ampersand">&</div>
+                
+                <div class="black-card">
+                    <div class="beloved-text">Beloved Son Of</div>
+                    <div class="parent-names">Mr. Kamal Gunawardena</div>
+                    <div class="parent-names">& Mrs. Nilanthi Gunawardena</div>
+                    <div class="bride-groom-name">Nipuna</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Date & Time Section -->
+        <section class="datetime-section fade-in">
+            <div class="datetime-item">
+                <div class="datetime-icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="datetime-label">The Date</div>
+                <div class="datetime-value">22nd Aug 2026</div>
+                <div class="datetime-sub">Monday</div>
+            </div>
+            
+            <div class="datetime-item">
+                <div class="datetime-icon"><i class="far fa-clock"></i></div>
+                <div class="datetime-label">The Time</div>
+                <div class="datetime-value">10:00 AM</div>
+                <div class="datetime-sub">to 03:00 PM</div>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section fade-in">
+            <div class="wait-text">Wait for the</div>
+            <div class="magic-text">magic</div>
+            <div class="countdown-label">Counting Down</div>
+            
+            <div class="countdown-timer" id="countdownTimer">
+                <div class="countdown-box">
+                    <span class="countdown-number" id="days">127</span>
+                    <span class="countdown-unit">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="hours">15</span>
+                    <span class="countdown-unit">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="minutes">18</span>
+                    <span class="countdown-unit">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="seconds">58</span>
+                    <span class="countdown-unit">Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section class="venue-section fade-in">
+            <div class="venue-label">The Venue</div>
+            <div class="venue-name">Hilton Colombo</div>
+            <div class="venue-address">& Residences, Colombo.</div>
+            <div class="venue-description">
+                We look forward to welcoming you to this beautiful sanctuary 
+                to celebrate our special day amidst nature's elegance.
+            </div>
+            
+            <button class="get-directions-btn" onclick="getDirections()">
+                <i class="fas fa-map-marker-alt"></i>
+                Get Directions
+            </button>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2!2d79.85!3d6.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTUnMTIuMCJOIDc5wrA1MScwMC4wIkU!5e0!3m2!1sen!2slk!4v1234567890"
+                    allowfullscreen="" 
+                    loading="lazy"
+                    title="Hilton Colombo Location">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="rsvp-section fade-in">
+            <div class="rsvp-question">Will You Join Us?</div>
+            <div class="rsvp-title">RSVP</div>
+            <div class="rsvp-text">
+                We would be absolutely thrilled to celebrate with you. 
+                Kindly respond by the end of July.
+            </div>
+            
+            <form class="rsvp-form" onsubmit="submitRSVP(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" placeholder="Your Name" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Guests</label>
+                    <select class="form-select" required aria-required="true">
+                        <option value="">Select number of guests</option>
+                        <option value="1">1 Guest (Just Me)</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Dietary Notes</label>
+                    <textarea class="form-textarea" placeholder="Vegan, Vegetarian, Allergies, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="send-rsvp-btn">Send RSVP</button>
+            </form>
+        </section>
+
+        <!-- Best Wishes Section -->
+        <section class="wishes-section fade-in">
+            <div class="wishes-icon">✨</div>
+            <div class="wishes-title">Best Wishes</div>
+            <div class="wishes-text">
+                Your presence at our wedding is the greatest gift of all. 
+                However, if you wish to honor us with a message, we would be delighted to read it!
+            </div>
+            
+            <form class="rsvp-form" onsubmit="submitWishes(event)">
+                <div class="form-group">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" class="form-input" placeholder="John Doe" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Your Message</label>
+                    <textarea class="form-textarea" placeholder="Wishing you a lifetime of happiness..." required aria-required="true"></textarea>
+                </div>
+                
+                <button type="submit" class="send-rsvp-btn">Send Wishes</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer fade-in">
+            <div class="with-love">With Love</div>
+            <div class="footer-names">Thashmi & Nipuna</div>
+            
+            <svg class="footer-floral" viewBox="0 0 100 100">
+                <text x="10" y="60" font-size="80">🌸</text>
+                <text x="60" y="40" font-size="60">🌿</text>
+            </svg>
+            
+            <div class="copyright">
+                © 2026 THASHMI & NIPUNA. ALL RIGHTS RESERVED.
+            </div>
+            
+            <div class="design-by">
+                Design By
+                <strong>invitemint</strong>
+                <div style="font-size: clamp(0.7rem, 1.8vw, 0.8rem); margin-top: 5px;">+94 70 781 9074</div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 10 : 20; // Fewer particles on mobile
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Open invitation
+        function openInvitation() {
+            document.getElementById('envelopeSection').style.display = 'none';
+            document.getElementById('invitationContent').style.display = 'block';
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+            startCountdown();
+            initScrollAnimation();
+            
+            // Track for analytics (optional)
+            console.log('Invitation opened');
+        }
+
+        // Close invitation
+        function closeInvitation() {
+            document.getElementById('envelopeSection').style.display = 'flex';
+            document.getElementById('invitationContent').style.display = 'none';
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        }
+
+        // Countdown Timer
+        function startCountdown() {
+            const weddingDate = new Date('August 22, 2026 10:00:00').getTime();
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+                
+                if (distance < 0) {
+                    document.getElementById('countdownTimer').innerHTML = '<div style="font-size: 1.5rem; color: var(--gold);">The Big Day is Here! 🎉</div>';
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        // Get Directions
+        function getDirections() {
+            window.open('https://maps.google.com/?q=Hilton+Colombo', '_blank');
+        }
+
+        // Submit RSVP
+        function submitRSVP(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send to a server
+            console.log('RSVP Data:', data);
+            
+            alert('Thank you for your RSVP! We look forward to celebrating with you! 💐');
+            e.target.reset();
+        }
+
+        // Submit Wishes
+        function submitWishes(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send to a server
+            console.log('Wishes Data:', data);
+            
+            alert('Thank you for your beautiful wishes! ❤️');
+            e.target.reset();
+        }
+
+        // Scroll Animation with Intersection Observer
+        function initScrollAnimation() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Keyboard navigation for envelope
+        document.addEventListener('DOMContentLoaded', () => {
+            const envelope = document.querySelector('.envelope');
+            
+            envelope.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openInvitation();
+                }
+            });
+            
+            // Handle viewport resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    // Recreate particles if needed
+                    const particles = document.querySelectorAll('.particle');
+                    if (window.innerWidth < 768 && particles.length > 10) {
+                        // Remove extra particles on mobile
+                        for (let i = 10; i < particles.length; i++) {
+                            particles[i].remove();
+                        }
+                    }
+                }, 250);
+            });
+        });
+
+        // Initialize
+        createParticles();
+
+        // Prevent zoom on double tap for mobile
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
